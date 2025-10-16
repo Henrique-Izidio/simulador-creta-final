@@ -1,0 +1,168 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "isExit": 0,
+            "isEntry": 1
+        },
+        {
+            "id": 2,
+            "isExit": 0,
+            "isEntry": 0
+        },
+        {
+            "id": 3,
+            "isExit": 0,
+            "isEntry": 0
+        },
+        {
+            "id": 4,
+            "isExit": 0,
+            "isEntry": 0
+        },
+        {
+            "id": 5,
+            "isExit": 0,
+            "isEntry": 0
+        },
+        {
+            "id": 6,
+            "isExit": 0,
+            "isEntry": 0
+        },
+        {
+            "id": 7,
+            "isExit": 0,
+            "isEntry": 0
+        },
+        {
+            "id": 8,
+            "isExit": 0,
+            "isEntry": 0
+        },
+        {
+            "id": 9,
+            "isExit": 0,
+            "isEntry": 0
+        },
+        {
+            "id": 10,
+            "isExit": 1,
+            "isEntry": 0
+        }
+    ],
+    "edges": [
+        {
+            "id": 1,
+            "extremities": [
+                1,
+                2
+            ],
+            "cost": 3
+        },
+        {
+            "id": 2,
+            "extremities": [
+                1,
+                3
+            ],
+            "cost": 5
+        },
+        {
+            "id": 3,
+            "extremities": [
+                2,
+                4
+            ],
+            "cost": 2
+        },
+        {
+            "id": 4,
+            "extremities": [
+                3,
+                5
+            ],
+            "cost": 4
+        },
+        {
+            "id": 5,
+            "extremities": [
+                4,
+                6
+            ],
+            "cost": 1
+        },
+        {
+            "id": 6,
+            "extremities": [
+                5,
+                6
+            ],
+            "cost": 7
+        },
+        {
+            "id": 7,
+            "extremities": [
+                6,
+                7
+            ],
+            "cost": 3
+        },
+        {
+            "id": 8,
+            "extremities": [
+                7,
+                8
+            ],
+            "cost": 6
+        },
+        {
+            "id": 9,
+            "extremities": [
+                8,
+                9
+            ],
+            "cost": 2
+        },
+        {
+            "id": 10,
+            "extremities": [
+                9,
+                10
+            ],
+            "cost": 8
+        },
+        {
+            "id": 11,
+            "extremities": [
+                1,
+                9
+            ],
+            "cost": 1
+        },
+        {
+            "id": 12,
+            "extremities": [
+                3,
+                7
+            ],
+            "cost": 2
+        },
+        {
+            "id": 13,
+            "extremities": [
+                4,
+                5
+            ],
+            "cost": 5
+        }
+    ],
+    "prisoner": {
+        "startPosition": 1,
+        "food": 50
+    },
+    "minotaur": {
+        "startPosition": 2,
+        "perception": 7
+    }
+}

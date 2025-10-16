@@ -1,0 +1,9 @@
+# Simulador de Creta - Dependências
+# Este projeto usa apenas bibliotecas padrão do Python
+# Não são necessárias instalações adicionais
+
+# Python 3.6+ é necessário
+# Bibliotecas usadas (já incluídas no Python):
+# - random (geração de números aleatórios)
+# - heapq (estrutura de dados heap)
+# - collections (estruturas de dados)
