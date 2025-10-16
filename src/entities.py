@@ -59,6 +59,7 @@ class Minotauro:
         self.inChase = False
         self.findMoment = None
         self.chasePath = []
+        self.reachMoment = None
     
     def move(self, prisonerPosition):
         if(len(self.chasePath) == 0): self.chasePath.append(self.actualPosition)

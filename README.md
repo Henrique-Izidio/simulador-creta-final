@@ -48,3 +48,10 @@ O programa gera:
 ## Algoritmos Utilizados
 - **Dijkstra**: Para cálculo de caminhos mínimos (O((V+E)log V))
 - **Estruturas de dados**: Sets, heaps e dicionários para eficiência
+## Vídeos e Equipe
+
+- Integrantes da equipe: <NOME 1> (<MATRÍCULA>), <NOME 2> (<MATRÍCULA>), <NOME 3> (<MATRÍCULA>)
+- Links para vídeos de explicação (um por participante):
+  - <NOME 1>: <URL_DO_VÍDEO>
+  - <NOME 2>: <URL_DO_VÍDEO>
+  - <NOME 3>: <URL_DO_VÍDEO>

@@ -23,6 +23,17 @@ def ler_entrada(filePath="entradas/input.txt"):
         percepcao = int(lines[5 + m])
         tempo_max = int(lines[6 + m])
         
+        # Validações básicas de consistência exigidas pelo enunciado
+        if saida == entrada:
+            print("Erro: Vértice de saída deve ser diferente do de entrada.")
+            return None, None, None, None
+        if pos_minotauro == entrada or pos_minotauro == saida:
+            print("Erro: Posição inicial do Minotauro deve ser diferente de entrada e saída.")
+            return None, None, None, None
+        if not (1 <= entrada <= n) or not (1 <= saida <= n) or not (1 <= pos_minotauro <= n):
+            print("Erro: Vértices de entrada/saída/minotauro fora do intervalo [1, n].")
+            return None, None, None, None
+
         g = Graph.from_txt_format(n, edges, entrada, saida)
         
         p = Prisioneiro(entrada)
@@ -71,6 +82,9 @@ def gerar_relatorio(prisioneiro, minotauro: Minotauro, tempo_restante, resultado
         relatorio.append(" -> ".join(map(str, minotauro.chasePath)))
     else:
         relatorio.append("Minotauro não detectou o prisioneiro")
+    
+    if getattr(minotauro, 'reachMoment', None) is not None:
+        relatorio.append(f"Minotauro alcançou o prisioneiro na rodada {minotauro.reachMoment}")
     
     relatorio.append("")
     relatorio.append("Estatísticas:")
@@ -132,6 +146,9 @@ def simular_labirinto():
      
         if p.pos == m.actualPosition:
             print("BATALHA! Prisioneiro e minotauro se encontraram!")
+            # Registra o momento em que o minotauro alcançou o prisioneiro
+            if getattr(m, 'reachMoment', None) is None:
+                m.reachMoment = rodada
             if simular_batalha():
                 print("Milagre! O prisioneiro venceu a batalha!")
                 resultado = "venceu_batalha"
