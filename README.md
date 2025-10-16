@@ -50,8 +50,4 @@ O programa gera:
 - **Estruturas de dados**: Sets, heaps e dicionários para eficiência
 ## Vídeos e Equipe
 
-- Integrantes da equipe: <NOME 1> (<MATRÍCULA>), <NOME 2> (<MATRÍCULA>), <NOME 3> (<MATRÍCULA>)
-- Links para vídeos de explicação (um por participante):
-  - <NOME 1>: <URL_DO_VÍDEO>
-  - <NOME 2>: <URL_DO_VÍDEO>
-  - <NOME 3>: <URL_DO_VÍDEO>
+- Integrantes da equipe: MANUELA MENEZES ALVES (2023003114), VITORIA MACIEL BERNARDO (2024001722), HENRIQUE ALISON DA SILVA IZIDIO (2023003025)
