@@ -53,16 +53,16 @@ class Minotauro:
         self.startPosition = posicao_inicial
         self.actualPosition = posicao_inicial
         self.path = [posicao_inicial]
-        self.labyrinthMap = graph
         self.perception = percepcao
+        self.labyrinthMap = graph
         
         self.inChase = False
-        self.findMoment = None
         self.chasePath = []
         self.reachMoment = None
     
     def move(self, prisonerPosition):
-        if(len(self.chasePath) == 0): self.chasePath.append(self.actualPosition)
+        
+        if(len(self.path) == 0): self.path.append(self.actualPosition)
         
         nextMove = None
         pathToPrisoner = self.labyrinthMap.getNodeById(self.actualPosition).getShortestPathTo(prisonerPosition)
@@ -70,7 +70,9 @@ class Minotauro:
         dist = pathToPrisoner.get("pathCost", float('inf'))
 
         if(self.perception >= dist):
-            self.inChase = True
+            if (not self.inChase):
+                self.inChase = True
+                self.chasePath.append(self.actualPosition)
             nextMove = pathToPrisoner["nextHop"]
             self.path.append(nextMove)
             self.chasePath.append(nextMove)
@@ -87,9 +89,6 @@ class Minotauro:
         
         self.actualPosition = nextMove
     
-    def chaseMove(self):
-        pass
-    
     def randomChoiceMove(self):
         node = self.labyrinthMap.getNodeById(self.actualPosition)
         if node is None:
@@ -101,13 +100,10 @@ class Minotauro:
 
         neighbor_ids = [n["node"] for n in neighbors]
 
-        last = self.path[-1] if len(self.path) > 0 else None
+        last = self.path[-2] if len(self.path) > 1 else None
         candidates = [nid for nid in neighbor_ids if nid != last]
         if not candidates:
             chosen = neighbor_ids[0]
         else:
             chosen = random.choice(candidates)
         return chosen
-
-    def setFindMoment(self, findMoment):
-        self.findMoment = findMoment
